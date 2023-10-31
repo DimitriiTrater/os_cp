@@ -20,6 +20,7 @@ void clear_row(size_t row) {
     character : ' ',
     color : color,
   };
+
   for (size_t col = 0; col < NUM_COLS; col++) {
     buffer[col + NUM_COLS * row] = empty;
   }
@@ -65,7 +66,12 @@ void print_char(char ch) {
   col++;
 }
 
-void print_str(char *str) {
+void println_char(char ch) {
+  print_char(ch);
+  print_newline();
+}
+
+void print_str(const char *str) {
   for (size_t i = 0; 1; i++) {
     char ch = (uint8_t)str[i];
 
@@ -77,6 +83,16 @@ void print_str(char *str) {
   }
 }
 
+void println_str(const char *str) {
+  print_str(str);
+  print_newline();
+}
+
 void print_set_color(uint8_t foreground, uint8_t background) {
   color = foreground + (background < 4);
+}
+
+void print_information_about_system() {
+  const char *about_os = "Free and Open OS.\n Version 0.0.1 \n";
+  print_str(about_os);
 }

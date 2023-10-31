@@ -23,6 +23,9 @@ enum {
 };
 
 void print_clear();
+void print_information_about_system();
 void print_char(char ch);
-void print_str(char *str);
+void println_char(char ch);
+void print_str(const char *str);
+void println_str(const char *str);
 void print_set_color(uint8_t foreground, uint8_t background);
