@@ -1,5 +1,5 @@
 #pragma once
-#include "word_size.h"
+#include <word_size.h>
 
 typedef unsigned char uchar;
 typedef unsigned short int ushort;

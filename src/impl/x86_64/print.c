@@ -1,5 +1,5 @@
-#include "print.h"
-#include "types.h"
+#include <print.h>
+#include <types.h>
 
 const static size_t NUM_COLS = 80;
 const static size_t NUM_ROWS = 25;
@@ -10,8 +10,10 @@ struct Char {
 };
 
 struct Char *buffer = (struct Char *)0xb8000;
+
 size_t col = 0;
 size_t row = 0;
+
 uint8_t color = PRINT_COLOR_WHITE | PRINT_COLOR_BLACK << 4;
 
 void clear_row(size_t row) {

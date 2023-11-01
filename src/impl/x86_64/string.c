@@ -1,4 +1,4 @@
-#include "string.h"
+#include <string.h>
 
 uint32_t strlen(const_string str) {
   uint32_t len = 0;

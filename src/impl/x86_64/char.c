@@ -1,5 +1,5 @@
-#include "char.h"
-#include "keyboard.h"
+#include <char.h>
+#include <keyboard.h>
 
 char get_ascii_char(uint8_t key_code) {
   switch (key_code) {

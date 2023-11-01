@@ -1,6 +1,6 @@
 #pragma once
 
-#include "types.h"
+#include <types.h>
 
 typedef char *mut_string;
 typedef const char *const_string;
