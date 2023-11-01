@@ -59,8 +59,8 @@ void print_char(char ch) {
   }
 
   buffer[col + NUM_COLS * row] = (struct Char){
-    character : (uint8_t)ch,
-    color : color,
+      .character = (uint8_t)ch,
+      .color = color,
   };
 
   col++;
