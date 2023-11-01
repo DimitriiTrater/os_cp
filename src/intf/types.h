@@ -20,3 +20,8 @@ typedef unsigned long int uint64_t;
 typedef signed long long int int64_t;
 typedef unsigned long long int uint64_t;
 #endif
+
+#ifndef SIZE_T
+#define SIZE_T
+typedef unsigned int size_t;
+#endif
