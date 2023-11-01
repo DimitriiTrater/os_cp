@@ -1,7 +1,6 @@
 #pragma once
 
-#include <stddef.h>
-#include <stdint.h>
+#include "types.h"
 
 enum {
   PRINT_COLOR_BLACK = 0,
@@ -22,11 +21,19 @@ enum {
   PRINT_COLOR_WHITE = 15,
 };
 
+uint32_t digit_count(int32_t num);
+void from_int_to_alpha(int32_t num, char *number);
+
 void print_clear();
 void print_newline();
+
 void print_char(char ch);
 void println_char(char ch);
+
 void print_str(const char *str);
 void println_str(const char *str);
+
+void print_int(int32_t num);
+
 void print_set_color(uint8_t foreground, uint8_t background);
 void print_information_about_system();

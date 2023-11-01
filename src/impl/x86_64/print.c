@@ -1,6 +1,5 @@
 #include "print.h"
-#include <stddef.h>
-#include <stdint.h>
+#include "types.h"
 
 const static size_t NUM_COLS = 80;
 const static size_t NUM_ROWS = 25;
@@ -23,6 +22,36 @@ void clear_row(size_t row) {
 
   for (size_t col = 0; col < NUM_COLS; col++) {
     buffer[col + NUM_COLS * row] = empty;
+  }
+}
+
+uint32_t digit_count(int32_t num) {
+  uint32_t count = 0;
+  if (num == 0) {
+    return 1;
+  }
+  while (num > 0) {
+    count++;
+    num /= 10;
+  }
+  return count;
+}
+
+void from_int_to_alpha(int32_t num, char *number) {
+  uint32_t dc = digit_count(num);
+  size_t index = dc - 1;
+  char x;
+  if (num == 0 && dc == 1) {
+    number[0] = '0';
+    number[1] = '\0';
+  } else {
+    while (num != 0) {
+      x = num % 10;
+      number[index] = x + '0';
+      index--;
+      num /= 10;
+    }
+    number[dc] = '\0';
   }
 }
 
@@ -86,6 +115,12 @@ void print_str(const char *str) {
 void println_str(const char *str) {
   print_str(str);
   print_newline();
+}
+
+void print_int(int32_t num) {
+  char *t = " ";
+  from_int_to_alpha(num, t);
+  print_str(t);
 }
 
 void print_set_color(uint8_t foreground, uint8_t background) {
