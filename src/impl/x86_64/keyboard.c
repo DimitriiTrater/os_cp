@@ -1,7 +1,7 @@
 #include "keyboard.h"
 #include "char.h"
 #include "print.h"
-#include <stdint.h>
+#include "types.h"
 
 uint8_t inb(uint16_t port) {
   uint8_t ret;
