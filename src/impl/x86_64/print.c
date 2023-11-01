@@ -17,8 +17,8 @@ uint8_t color = PRINT_COLOR_WHITE | PRINT_COLOR_BLACK << 4;
 
 void clear_row(size_t row) {
   struct Char empty = (struct Char){
-    character : ' ',
-    color : color,
+      .character = ' ',
+      .color = color,
   };
 
   for (size_t col = 0; col < NUM_COLS; col++) {
